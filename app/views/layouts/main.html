@@ -1,0 +1,19 @@
+<header ui-view="menu-top" class="main-header fixed-to-top"></header>
+
+<!-- Left side column. contains the logo and sidebar -->
+<aside class="main-sidebar" style="height:100%;">
+    <section class="sidebar" ui-view="menu-left" style="overflow:auto; position:relative; height:100%;padding-right: 6%;width: 106%;">
+        <!-- /.search form -->
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <!-- <menu-uv></menu-uv> -->
+    </section>
+</aside>
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper menu-padded">
+    <div ui-view="content" class="content"></div>
+</div>
+
+<footer class="main-footer">
+    <strong>Copyright &copy; 2016-2017 Jahwes .</strong> All rights reserved.
+</footer>
