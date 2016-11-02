@@ -1,0 +1,82 @@
+{
+  "name": "ARBD-web",
+  "description": "CinemaHD",
+  "main": "public/index.html",
+  "authors": [
+    "Jahwes"
+  ],
+  "license": "UNLICENSED",
+  "keywords": [
+    "movies"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "moment": "2.13.0",
+    "bootstrap": "~3.3.6",
+    "font-awesome": "~4.6.1",
+    "Ionicons": "ionicons#~2.0.1",
+    "AdminLTE": "admin-lte#~2.3.2",
+    "fastclick": "~1.0.6",
+    "angular": "~1.5.5",
+    "angular-animate": "~1.5.5",
+    "angular-sanitize": "~1.5.5",
+    "angular-resource": "~1.5.5",
+    "angular-ui-router": "~0.2.18",
+    "angular-material": "~1.0.7",
+    "ng-device-detector": "~3.0.1",
+    "angular-filter": "~0.5.8",
+    "angular-truncate": "*",
+    "ui-router-extras": "~0.1.2",
+    "angular-ui-select": "~0.16.1",
+    "checklist-model": "^0.9.0",
+    "textAngular": "^1.5.2",
+    "angular-ui-notification": "^0.2.0",
+    "markdown-editpreview-ng.js": "markdown-editpreview-ng#^1.0.0-rc3",
+    "ng-marked": "tastycode/ng-marked",
+    "angular-inview": "~1.5.7"
+  },
+  "overrides": {
+    "AdminLTE": {
+      "main": [
+        "dist/js/app.js",
+        "dist/css/AdminLTE.css",
+        "dist/css/skins/skin-yellow.css"
+      ]
+    },
+    "moment": {
+      "main": [
+        "moment.js",
+        "locale/fr.js"
+      ]
+    },
+    "bootstrap": {
+      "main": [
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js"
+      ]
+    },
+    "font-awesome": {
+      "main": [
+        "css/font-awesome.css"
+      ]
+    },
+    "angular-bootstrap-datetimepicker": {
+      "main": [
+        "src/css/datetimepicker.css",
+        "src/js/datetimepicker.js",
+        "src/js/datetimepicker.templates.js"
+      ]
+    }
+  },
+  "resolutions": {
+    "angular": "~1.5.5",
+    "angular-resource": "~1.5.5"
+  }
+}
