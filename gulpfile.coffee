@@ -144,7 +144,7 @@ gulp.task 'copy_other', ->
 gulp.task 'open', ->
     options = { uri: "http://#{name}.net/index.html" }
     if process.env['APPLICATION_ENV'] isnt 'production'
-        options.uri = "http://#{current_dir}.etna.dev/index.html"
+        options.uri = "http://#{current_dir}.cinemahd.dev/index.html"
     gulp.src "#{src}/index.html"
         .pipe open(options)
 
