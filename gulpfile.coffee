@@ -18,6 +18,7 @@ bowerFiles = require 'main-bower-files'
 preprocess = require 'gulp-preprocess'
 sourcemaps = require 'gulp-sourcemaps'
 uglify     = require 'gulp-uglify'
+connect    = require 'gulp-connect'
 
 css_filter = filter '**/*.css', { restore: true }
 js_filter  = filter '**/*.js', { restore: true }
@@ -142,9 +143,9 @@ gulp.task 'copy_other', ->
         .pipe gulp.dest("#{dest}/")
 
 gulp.task 'open', ->
-    options = { uri: "http://#{name}.net/index.html" }
+    options = { uri: 'http://localhost:8000/public' }
     if process.env['APPLICATION_ENV'] isnt 'production'
-        options.uri = "http://#{current_dir}.cinemahd.dev/index.html"
+        options.uri = 'http://localhost:8000/public/'
     gulp.src "#{src}/index.html"
         .pipe open(options)
 
@@ -158,8 +159,14 @@ gulp.task 'watch', ->
     gulp.watch "#{src}/**/*.css",    ['css']
     gulp.watch "#{src}/index.html",  ['copy']
 
+gulp.task 'webserver', ->
+    conf =
+        port: 8000
+    connect.server(conf)
+
 gulp.task 'assets',  ['copy', 'copy_other', 'css', 'components']
 gulp.task 'common',  ['clean', 'assets', 'ngtemplate', 'coffee']
 gulp.task 'dev',     ['common']
 gulp.task 'prod',    ['common', 'compress', 'concat_js', 'inject', 'open']
-gulp.task 'default', ['dev', 'open', 'watch']
+gulp.task 'launch',  ['webserver']
+gulp.task 'default', ['dev', 'launch', 'open', 'watch']
