@@ -16,6 +16,12 @@ module = angular.module 'arbd', [
     'angular-inview'
 ]
 
+ #@ifdef api_url
+module.constant 'api_url',  '/* @echo API_URL */'
+#@endif
+#@ifndef api_url
+module.constant 'api_url',  '//localhost:8080'
+
 module.config (
     $stateProvider,
     $urlRouterProvider,
@@ -24,6 +30,7 @@ module.config (
     $compileProvider,
     $urlMatcherFactoryProvider,
 ) ->
+
     # on envoie le cookie sur toute nos requetes http par défaut
     $httpProvider.defaults.withCredentials = true
 
@@ -34,10 +41,6 @@ module.config (
         return +(Math.round(this + 'e+' + places)  + 'e-' + places)
 
     moment.locale 'fr'
-
-    # on whitelist les différents domaines etna
-    whiteList = $sceDelegateProvider.resourceUrlWhitelist()
-    whiteList.push '.*\.dev'
 
     $urlMatcherFactoryProvider.strictMode(false)
 
@@ -71,6 +74,7 @@ module.config (
             views:
                 'content@app':
                     templateUrl: 'views/home.html'
+                    controller:  'HomeCtrl'
 
     $urlRouterProvider.otherwise '/'
 

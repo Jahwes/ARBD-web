@@ -1,5 +1,5 @@
 module.controller 'MainCtrl', ($rootScope, $scope, $state, deviceDetector) ->
-    $rootScope.deviceDetector      = deviceDetector
+    $rootScope.deviceDetector = deviceDetector
 
     $scope.init = ->
         $(window, '.wrapper').off 'resize'
