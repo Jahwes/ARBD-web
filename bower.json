@@ -40,7 +40,8 @@
     "angular-ui-notification": "^0.2.0",
     "markdown-editpreview-ng.js": "markdown-editpreview-ng#^1.0.0-rc3",
     "ng-marked": "tastycode/ng-marked",
-    "angular-inview": "~1.5.7"
+    "angular-inview": "~1.5.7",
+    "angular-bootstrap": "*"
   },
   "overrides": {
     "AdminLTE": {

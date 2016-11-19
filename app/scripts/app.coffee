@@ -1,19 +1,21 @@
 'use strict'
 
 module = angular.module 'arbd', [
-    'arbd-templates',
-    'ngSanitize',
-    'ui.router',
-    'ngAnimate',
-    'angular.filter',
-    'ng.deviceDetector',
-    'truncate',
-    'ct.ui.router.extras',
-    'ui.select',
-    'checklist-model',
-    'ui-notification',
-    'textAngular',
+    'arbd-templates'
+    'ngSanitize'
+    'ui.router'
+    'ui.bootstrap'
+    'ngAnimate'
+    'angular.filter'
+    'ng.deviceDetector'
+    'truncate'
+    'ct.ui.router.extras'
+    'ui.select'
+    'checklist-model'
+    'ui-notification'
+    'textAngular'
     'angular-inview'
+    'ngResource'
 ]
 
  #@ifdef api_url
@@ -29,11 +31,8 @@ module.config (
     $sceDelegateProvider,
     $compileProvider,
     $urlMatcherFactoryProvider,
+    NotificationProvider
 ) ->
-
-    # on envoie le cookie sur toute nos requetes http par défaut
-    $httpProvider.defaults.withCredentials = true
-
     $compileProvider.aHrefSanitizationWhitelist /^\s*(https?|ftp|mailto|file|tel):/
 
     # trix pour faire sur n'importe quel number .round(qqchose)
@@ -42,7 +41,16 @@ module.config (
 
     moment.locale 'fr'
 
+    # on whitelist les différents domaines etna
+    whiteList = $sceDelegateProvider.resourceUrlWhitelist()
+    whiteList.push ''
+
+
     $urlMatcherFactoryProvider.strictMode(false)
+
+
+    NotificationProvider.setOptions
+        startTop: 50
 
     # Black Magic, touch this and i kill you in your bed
     # ça remplace 'MonResolve' par ['MonResolve', (a) -> a() ]

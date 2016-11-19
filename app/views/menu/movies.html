@@ -2,11 +2,11 @@
     <li class="header">
         Films à l'affiche
     </li>
-    <li>
+<!--     <li>
         <form class="sidebar-form">
             <input type="text" class="form-control" placeholder="Filtrer..."/>
         </form>
-    </li>
+    </li> -->
 
     <li class="treeview">
         <a href>
@@ -14,5 +14,12 @@
             <span>A l'affiche</span>
             <i class="fa fa-angle-down pull-right" style="text-align: center;"></i>
         </a>
+        <ul class="treeview-menu" style="display: none;">
+            <li ng-repeat="movie in movies" style="white-space: normal;">
+                <a href>
+                    <span ng-bind="::movie.title"></span>
+                </a>
+            </li>
+        </ul>
     </li>
 </ul>
