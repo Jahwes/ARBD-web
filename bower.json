@@ -41,7 +41,9 @@
     "markdown-editpreview-ng.js": "markdown-editpreview-ng#^1.0.0-rc3",
     "ng-marked": "tastycode/ng-marked",
     "angular-inview": "~1.5.7",
-    "angular-bootstrap": "*"
+    "angular-bootstrap": "*",
+    "highcharts-ng": "0.0.13",
+    "angular-ui-select": "0.16.1"
   },
   "overrides": {
     "AdminLTE": {

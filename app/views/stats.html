@@ -1,0 +1,21 @@
+<div class="row">
+	<div class="col-sm-3 col-md-3 col-lg-3">
+		<div class="btn-group-vertical btn-group-lg" role="group">
+			<button class="btn btn-default" ng-click="ageStats()">Spectator by ages</button>
+			<button class="btn btn-default" ng-click="genderStats()">Men/Women repartition</button>
+			<button class="btn btn-default" ng-click="popularFilms()">Most popular films</button>
+			<button class="btn btn-default" ng-click="filmStats3D()">Films 2D/3D</button>
+			<button class="btn btn-default" ng-click="popularDates()">Most popular showing date</button>
+			<button class="btn btn-default" ng-click="companyStats()">Tickets by companie</button>
+			<button class="btn btn-default" ng-click="topActors()">Top actors/actress</button>
+			<button class="btn btn-default" ng-click="topActors('actrice')">Top actress</button>
+			<button class="btn btn-default" ng-click="topActors('acteur')">Top actors</button>
+		</div>
+	</div>
+	<div class="col-sm-9 col-md-9 col-lg-9">
+		<button class="btn btn-default" ng-click="changeType('pie')"><i class="fa fa-pie-chart">   PIE </button>
+		<button class="btn btn-default" ng-click="changeType('line')"><i class="fa fa-line-chart">   LINE </button>
+		<button class="btn btn-default" ng-click="changeType('bar')"><i class="fa fa-bar-chart">   BAR </button>
+		<highchart id="chart1" config="chartConfig" class="span10"></highchart>
+	</div>
+</div>

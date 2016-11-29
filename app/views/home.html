@@ -7,7 +7,8 @@
 		<div class="form-group">
 			<input type="text" class="form-control" ng-model="query">
 		</div>
-		<button type="button" class="btn btn-default" ng-click="fetchOrders()">Send</button>
+		<button type="button" class="btn btn-default" ng-click="fetchOrders(query)">Filter</button>
+		<span ng-if="pagination.totalItems"> {{ pagination.totalItems }} orders</span>
 	</form>
 	<table class="table">
 		<thead>

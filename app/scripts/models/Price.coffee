@@ -3,11 +3,15 @@ module.factory 'Price', ($resource, api_url) ->
 
     actions =
         query:
-            url:             "#{url}/search"
-            isArray:         false
+            url:     "#{url}/search"
+            isArray: false
+
         getCurrent:
-            url:             "#{url}/current"
-            isArray:         false
-            cache:           true
+            url:     "#{url}/current"
+            isArray: true
+
+        addPrice:
+            method:  'POST'
+            url:     "#{url}"
 
     return $resource url, { }, actions

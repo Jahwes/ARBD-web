@@ -16,13 +16,23 @@ module = angular.module 'arbd', [
     'textAngular'
     'angular-inview'
     'ngResource'
+    'highcharts-ng'
+    'ui.select'
 ]
 
- #@ifdef api_url
-module.constant 'api_url',  '/* @echo API_URL */'
+#@ifdef api_url
+module.constant 'api_url', '/* @echo API_URL */'
 #@endif
 #@ifndef api_url
-module.constant 'api_url',  '//localhost:8080'
+module.constant 'api_url', '//localhost:8080'
+
+#@ifdef es_url
+module.constant 'es_url', '/* @echo ES_URL */'
+module.constant 'index',  'cinemahd.prod'
+#@endif
+#@ifndef es_url
+module.constant 'es_url', '//localhost:9200'
+module.constant 'index',  'cinemahd.dev'
 
 module.config (
     $stateProvider,
@@ -45,9 +55,7 @@ module.config (
     whiteList = $sceDelegateProvider.resourceUrlWhitelist()
     whiteList.push ''
 
-
     $urlMatcherFactoryProvider.strictMode(false)
-
 
     NotificationProvider.setOptions
         startTop: 50
@@ -83,6 +91,14 @@ module.config (
                 'content@app':
                     templateUrl: 'views/home.html'
                     controller:  'HomeCtrl'
+
+        .state 'stats',
+            url: '/stats'
+            parent: 'app.base'
+            views:
+                'content@app':
+                    templateUrl: 'views/stats.html'
+                    controller:  'StatsCtrl'
 
     $urlRouterProvider.otherwise '/'
 

@@ -1,15 +1,14 @@
 module.controller 'HomeCtrl', ($rootScope, $scope, Order, $state, NotifyService) ->
     $scope.orders      = []
     $scope.pagedOrders = []
-    $scope.query       = '*'
-    $scope.old_query   = ''
+    $scope.query       = ''
 
     $scope.pagination =
         currentPage: 1
 
-    $scope.fetchOrders = ->
-        return if $scope.query is $scope.old_query
-        $scope.old_query = $scope.query
+    $scope.fetchOrders = (query = '*') ->
+        return if query is $scope.query
+        $scope.query = query
         Order
         .query
             size:  9999

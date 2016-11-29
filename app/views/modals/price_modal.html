@@ -1,0 +1,38 @@
+<section class="content-header">
+    <h1>Create price</h1>
+</section>
+
+<section class="content">
+    <div class="row">
+        <div class="col-sm-4 col-md-4">
+            <h3>Actual prices</h3>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Type</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="price in actual_prices">
+                        <td>{{ price.type }} </td>
+                        <td>{{ price.value }}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm-8 col-md-8">
+            <h3>change price</h3>
+            <div class="form-inline">
+                <div>
+                    <select class="form-control" ng-model="price_type">
+                        <option ng-repeat="type in types"> {{ ::type }}</option>
+                    </select>
+                    <input class="form-control" type="text" ng-model="price_value"/>
+                    <button class="btn btn-default" ng-click="putPrices()">add prices</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
