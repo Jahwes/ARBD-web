@@ -1,4 +1,4 @@
-module.controller 'MenuMoviesCtrl', ($scope, $state, Movie) ->
+module.controller 'MenuMoviesCtrl', ($scope, $state, Movie, NotifyService) ->
     $scope.movies = []
 
     Movie
