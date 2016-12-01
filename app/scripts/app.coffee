@@ -20,17 +20,17 @@ module = angular.module 'arbd', [
     'ui.select'
 ]
 
-#@ifdef api_url
+#@ifdef API_URL
 module.constant 'api_url', '/* @echo API_URL */'
 #@endif
-#@ifndef api_url
+#@ifndef API_URL
 module.constant 'api_url', '//localhost:8080'
 
-#@ifdef es_url
+#@ifdef ES_URL
 module.constant 'es_url', '/* @echo ES_URL */'
 module.constant 'index',  'cinemahd.prod'
 #@endif
-#@ifndef es_url
+#@ifndef ES_URL
 module.constant 'es_url', '//localhost:9200'
 module.constant 'index',  'cinemahd.dev'
 
