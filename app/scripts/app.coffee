@@ -24,15 +24,15 @@ module = angular.module 'arbd', [
 module.constant 'api_url', '/* @echo API_URL */'
 #@endif
 #@ifndef api_url
-module.constant 'api_url', '//api.cinemahd.ovh'
+module.constant 'api_url', '//localhost:8080'
 
 #@ifdef es_url
 module.constant 'es_url', '/* @echo ES_URL */'
 module.constant 'index',  'cinemahd.prod'
 #@endif
 #@ifndef es_url
-module.constant 'es_url', '//api.cinemahd.ovh:9200'
-module.constant 'index',  'cinemahd.prod'
+module.constant 'es_url', '//localhost:9200'
+module.constant 'index',  'cinemahd.dev'
 
 module.config (
     $stateProvider,
